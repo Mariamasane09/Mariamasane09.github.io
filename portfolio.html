@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mariama Sane - Développeuse Web Full Stack</title>
+  <meta name="description" content="Portfolio de Mariama Sane, développeuse web full stack.">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+  <!-- ========== MENU ========== -->
+  <nav>
+    <a class="logo" href="#accueil">Mariama Sane</a>
+    <button id="burger" aria-label="Ouvrir le menu">☰</button>
+    <div class="liens" id="liens">
+      <a href="#apropos">À propos</a>
+      <a href="#projet">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+      <a class="bouton-cv" href="cv.pdf" download>Télécharger mon CV</a>
+    </div>
+  </nav>
+
+  <!-- ========== ACCUEIL ========== -->
+  <header id="accueil">
+    <div class="texte">
+      <h1>Développeuse Web <span>Full Stack</span></h1>
+      <p class="intro">Je conçois et je développe des applications web, de l'interface à la base de données.</p>
+      <a class="btn plein" href="#projet">Voir mes projets</a>
+      <a class="btn" href="https://github.com/Mariamasane09">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/mariama-sane-496a9a256">LinkedIn</a>
+    </div>
+
+    <!-- PHOTO : le fichier doit être dans le dossier "images" et s'appeler exactement "moi.jpg" -->
+    <div class="illustration">
+      <img src="images/moi.jpg" alt="Portrait de Mariama Sane">
+    </div>
+  </header>
+
+  <!-- ========== À PROPOS ========== -->
+  <section id="apropos">
+    <p class="petit-titre">À propos</p>
+    <h2>Qui suis-je ?</h2>
+    <div class="deux-colonnes">
+      <div>
+        <p>Étudiante en Master 1 à l'Université Numérique Cheikh Hamidou Kane, j'ai choisi le développement web pour sa fusion entre logique et créativité.</p>
+        <p>J'aime bâtir des interfaces intuitives et souhaite désormais approfondir mes compétences en frameworks modernes et en développement backend pour concevoir des projets complets.</p>
+      </div>
+      <ul class="infos">
+        <li><strong>Mes diplômes</strong>
+          Baccalauréat<br>
+          Brevet de fin d'études<br>
+          Brevet de fin d'études élémentaires<br>
+          Prise de parole - E.D.P<br>
+          Marketing Digital, Réseaux Sociaux, Commerce Digital et Multimédia - CMC Afrique<br>
+          Informatique et internet - Force-N<br>
+          Multimédia - EDEP<br>
+          Développement web IA - WOMMATE Technologie</li>
+        <li><strong>Mes services</strong>
+          Création de sites web (sites vitrines, pages d'accueil)<br>
+          Développement d'applications web (interfaces, back-end, bases de données)<br>
+          Création de sites WordPress<br>
+          Maquettes et design graphique (Figma, Canva, Illustrator, Photoshop)</li>
+        <li><strong>Langues</strong> Français, anglais</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== PROJETS ========== -->
+  <section id="projet">
+    <p class="petit-titre">Projets</p>
+    <h2>Mes projets</h2>
+
+    <!-- Projet 1 : Mbayboole (en cours) -->
+    <div class="projet">
+      <div class="image-projet">
+        <a href="images/mbayboole-maquette.png" target="_blank" rel="noopener">
+          <img src="images/mbayboole-maquette.png" alt="Maquette des écrans de l'application Mbayboole : catalogue, connexion, profil, espace structure et administration">
+        </a>
+      </div>
+      <div class="details">
+        <span class="statut">En cours</span>
+        <h3>Mbayboole</h3>
+        <p>Plateforme autour de l'agriculture : catalogue de produits agricoles, services agricoles, offres de stage, profils des utilisateurs et espace d'administration.</p>
+        <h4>Où j'en suis</h4>
+        <p>La maquette des écrans est réalisée et le développement est en cours.</p>
+        <h4>Mon rôle (back-end)</h4>
+        <ul class="puces">
+          <li>Modélisation de la base de données avec PostgreSQL et Prisma</li>
+          <li>API REST avec Node.js et Express</li>
+          <li>Authentification JWT et hashage des mots de passe avec bcrypt</li>
+          <li>Règles métier et contrôle des accès</li>
+          <li>Validation des données reçues</li>
+          <li>Gestion des fichiers envoyés</li>
+          <li>Tests unitaires et tests d'intégration de l'API</li>
+          <li>Documentation des endpoints</li>
+        </ul>
+        <h4>Technologies</h4>
+        <ul class="tags"><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Prisma</li><li>JWT</li><li>bcrypt</li><li>Figma</li></ul>
+      </div>
+    </div>
+
+    <!-- Projet 2 : MayaFoot (site vitrine) -->
+    <div class="projet">
+      <div class="image-projet">
+        <img src="images/mayafoot-accueil.png" alt="Page d'accueil du site MayaFoot, restaurant de burgers">
+        <div class="vignettes">
+          <img src="images/mayafoot-valeurs.png" alt="Sections Nos valeurs et Nos recettes du site MayaFoot">
+          <img src="images/mayafoot-services.png" alt="Section Nos services du site MayaFoot">
+        </div>
+      </div>
+      <div class="details">
+        <span class="statut fini">Terminé</span>
+        <h3>MayaFoot</h3>
+        <p>Site vitrine d'un restaurant de burgers : présentation de l'établissement, de ses valeurs, de ses recettes et de ses services (livraison gratuite, paiement en ligne, satisfait ou remboursé).</p>
+        <h4>Mon rôle</h4>
+        <p>Réalisation du site : structure des pages, mise en page et design.</p>
+        <h4>Technologies</h4>
+        <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMPÉTENCES ========== -->
+  <section id="competences">
+    <p class="petit-titre">Compétences</p>
+    <h2>Mes outils</h2>
+    <div class="grille">
+      <div class="boite"><h3>Front-end</h3><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Bootstrap</li><li>WordPress</li></ul></div>
+      <div class="boite"><h3>Back-end et bases de données</h3><ul class="tags"><li>Node.js</li><li>Express</li><li>API REST</li><li>JWT</li><li>PHP</li><li>PostgreSQL</li><li>Prisma</li><li>MySQL</li><li>Tests unitaires</li></ul></div>
+      <div class="boite"><h3>Design et graphisme</h3><ul class="tags"><li>Figma</li><li>Canva</li><li>Adobe Illustrator</li><li>Photoshop</li></ul></div>
+      <div class="boite"><h3>Outils et gestion</h3><ul class="tags"><li>Git / GitHub</li><li>Trello</li><li>VS Code</li><li>Microsoft Office</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Travaillons ensemble</h2>
+        <p>mariamasane266@gmail.com<br>77 337 67 68<br>Thiès, Sénégal</p>
+      </div>
+      <a class="btn plein" href="mailto:mariamasane266@gmail.com">M'écrire</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Mariama Sane</footer>
+
+  <!-- Petit script : ouvre et ferme le menu sur téléphone -->
+  <script>
+    var burger = document.getElementById("burger");
+    var liens = document.getElementById("liens");
+    burger.onclick = function () { liens.classList.toggle("ouvert"); };
+    liens.onclick = function () { liens.classList.remove("ouvert"); };
+  </script>
+</body>
+</html>

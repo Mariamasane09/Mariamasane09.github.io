@@ -1,0 +1,175 @@
+/* ===== COULEURS : change-les seulement ici ===== */
+:root {
+  --nuit: #0a1a3c;     /* bleu nuit */
+  --nuit2: #10285c;    /* bleu nuit plus clair */
+  --bleu: #2f6bff;     /* bleu vif */
+  --bleu-fonce: #1f4fd8;
+  --ciel: #9dbbff;     /* bleu ciel */
+  --fond: #f4f7ff;     /* fond des pages */
+  --texte: #0f1b38;
+  --gris: #52607f;
+  --bordure: #dce4f7;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--fond);
+  color: var(--texte);
+  line-height: 1.6;
+}
+
+/* ===== MENU ===== */
+nav {
+  position: sticky;      /* le menu reste en haut quand on descend */
+  top: 0;
+  z-index: 10;
+  background: var(--nuit);
+  padding: 0 30px;
+  min-height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
+.logo span { color: var(--bleu); }
+.liens a { color: #dce6ff; text-decoration: none; margin-left: 8px; padding: 10px 14px; border-radius: 8px; }
+.liens a:hover { background: rgba(255, 255, 255, 0.12); }
+.liens .bouton-cv { background: var(--bleu); color: white; margin-left: 14px; }
+.liens .bouton-cv:hover { background: var(--bleu-fonce); }
+#burger { display: none; background: none; border: 1px solid #5f8cff; color: white; font-size: 22px; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; }
+
+/* ===== ACCUEIL ===== */
+header {
+  background: linear-gradient(160deg, var(--nuit), var(--nuit2));
+  color: white;
+  padding: 80px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+header .texte { max-width: 520px; }
+.badge { display: inline-block; background: rgba(47, 107, 255, 0.3); border: 1px solid var(--ciel); padding: 6px 14px; border-radius: 20px; font-size: 14px; }
+header h1 { font-size: 52px; line-height: 1.1; margin: 18px 0; }
+header h1 span { color: var(--ciel); }
+.intro { color: #c5d3f5; font-size: 18px; margin-bottom: 28px; }
+/* ===== PHOTO : cadre horizontal, photo entière, bords remplis par un flou de la même photo ===== */
+.illustration {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;               /* cadre horizontal. Pour plus large : 16 / 10 */
+  overflow: hidden;
+  border-radius: 24px;
+  border: 3px solid var(--bleu);
+  background: #c9c9cc;               /* gris de secours */
+}
+/* Fond : la même photo, agrandie et floue, qui remplit les côtés */
+.illustration::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/moi.jpg") center / cover no-repeat;   /* même nom que dans index.html */
+  filter: blur(25px);
+  transform: scale(1.3);
+}
+/* Devant : la vraie photo, entière, dont les bords gauche et droit s'estompent
+   dans le fond flou (plus aucun trait visible) */
+.illustration img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 78%, transparent 100%);
+}
+.illustration svg { width: 100%; height: auto; }
+
+/* ===== BOUTONS ===== */
+.btn { display: inline-block; padding: 13px 24px; border: 2px solid white; border-radius: 10px; color: white; text-decoration: none; font-weight: bold; margin: 6px 8px 0 0; }
+.btn:hover { background: rgba(255, 255, 255, 0.15); }
+.btn.plein { background: var(--bleu); border-color: var(--bleu); }
+.btn.plein:hover { background: var(--bleu-fonce); }
+
+/* ===== SECTIONS ===== */
+section { max-width: 1000px; margin: 0 auto; padding: 70px 30px 20px; }
+.petit-titre { color: var(--bleu-fonce); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; margin: 0; }
+h2 { font-size: 36px; margin: 6px 0 28px; }
+p { color: var(--gris); font-size: 17px; }
+
+/* À propos */
+.deux-colonnes { display: flex; gap: 40px; flex-wrap: wrap; }
+.deux-colonnes > div { flex: 1; min-width: 280px; }
+.infos { list-style: none; padding: 0; margin: 0; flex: 1; min-width: 280px; }
+.infos li { background: white; border: 1px solid var(--bordure); border-left: 5px solid var(--bleu); border-radius: 12px; padding: 14px 18px; margin-bottom: 12px; color: var(--gris); }
+.infos strong { display: block; color: var(--bleu-fonce); font-size: 13px; text-transform: uppercase; }
+
+/* Projet */
+.projet { background: white; border: 1px solid var(--bordure); border-radius: 24px; padding: 28px; display: flex; gap: 36px; flex-wrap: wrap; box-shadow: 0 15px 40px rgba(15, 40, 100, 0.12); }
+.image-projet { flex: 1.1; min-width: 300px; }
+.image-projet svg, .image-projet img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--bordure); display: block; }
+.legende { font-size: 13px; margin: 8px 0 0; }
+.details { flex: 1; min-width: 280px; }
+.details h3 { font-size: 26px; margin: 0 0 8px; }
+.details h4 { color: var(--bleu-fonce); text-transform: uppercase; font-size: 13px; letter-spacing: 1px; margin: 18px 0 4px; }
+.details p { margin: 0; }
+.lien-fort { display: inline-block; margin-top: 20px; color: var(--bleu-fonce); font-weight: bold; text-decoration: none; }
+.lien-fort:hover { text-decoration: underline; }
+
+/* Étiquettes (technologies) */
+.tags { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li { background: #e6eeff; color: var(--nuit); padding: 5px 14px; border-radius: 20px; font-size: 14px; font-weight: 600; }
+
+/* Compétences */
+.grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+.boite { background: white; border: 1px solid var(--bordure); border-top: 5px solid var(--bleu); border-radius: 14px; padding: 20px; }
+.boite h3 { margin: 0 0 10px; font-size: 20px; }
+.note { font-size: 14px; }
+
+/* Contact */
+.contact { background: linear-gradient(135deg, var(--nuit), var(--nuit2)); border-radius: 24px; padding: 44px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.contact h2 { color: white; margin: 0 0 10px; }
+.contact p { color: #c5d3f5; margin: 0; }
+
+footer { text-align: center; padding: 40px 20px; color: var(--gris); font-size: 14px; }
+
+/* ===== TÉLÉPHONE ===== */
+@media (max-width: 760px) {
+  header { flex-direction: column; padding: 50px 24px; }
+  header h1 { font-size: 36px; }
+  .illustration { max-width: 420px; }
+  #burger { display: block; }
+  .liens { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--nuit); padding: 10px 24px 20px; flex-direction: column; }
+  .liens.ouvert { display: flex; }
+  .liens a { display: block; margin: 0; padding: 14px 0; }
+  .liens .bouton-cv { margin-top: 8px; text-align: center; }
+  h2 { font-size: 28px; }
+}
+
+/* ===== AJOUTS : listes du parcours et cartes d'autres projets ===== */
+.liste { list-style: none; padding: 0; margin: 0; }
+.liste li { color: var(--gris); font-size: 15px; padding: 8px 0; border-top: 1px solid var(--bordure); }
+.liste li:first-child { border-top: none; padding-top: 0; }
+.liste strong { color: var(--texte); }
+.autres { margin-top: 24px; }
+.autres p { font-size: 15px; margin: 0; }
+
+/* ===== PROJETS : plusieurs cartes, étiquette de statut, petites images ===== */
+.projet + .projet { margin-top: 32px; }
+.statut { display: inline-block; background: #fff3d6; color: #8a5a00; font-size: 13px; font-weight: bold; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+.statut.fini { background: #dff5e6; color: #17653a; }
+.image-projet a { display: block; }
+.vignettes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+
+/* Liste à puces dans les détails d'un projet */
+.puces { margin: 6px 0 0; padding-left: 20px; color: var(--gris); font-size: 16px; }
+.puces li { margin-bottom: 4px; }
